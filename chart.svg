@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250" width="500" height="250">
+  <style>
+    .title { font: bold 13px sans-serif; fill: #111; }
+    .subtitle { font: 11px sans-serif; fill: #333; }
+    .axis { stroke: #888; stroke-width: 1; }
+    .grid { stroke: #ddd; stroke-width: 0.5; }
+    .label { font: 10px sans-serif; fill: #222; }
+    .barlabel { font: bold 10px sans-serif; fill: #fff; }
+    .barlabel-out { font: bold 10px sans-serif; fill: #222; }
+    .legend { font: 10px sans-serif; fill: #222; }
+  </style>
+
+  <!-- Title -->
+  <text x="250" y="16" text-anchor="middle" class="title">HLE Ablation: Round 2 (n=15 hardest) vs Round 3 (n=30 moderate)</text>
+  <text x="250" y="30" text-anchor="middle" class="subtitle">Pass rate (%) by condition</text>
+
+  <!-- Plot area: x=50..450, y=50..210 -->
+  <!-- Y axis (0..40%) -->
+  <line x1="50" y1="50" x2="50" y2="210" class="axis"/>
+  <line x1="50" y1="210" x2="450" y2="210" class="axis"/>
+
+  <!-- Gridlines at 10/20/30/40% -->
+  <line x1="50" y1="170" x2="450" y2="170" class="grid"/>
+  <line x1="50" y1="130" x2="450" y2="130" class="grid"/>
+  <line x1="50" y1="90"  x2="450" y2="90"  class="grid"/>
+  <line x1="50" y1="50"  x2="450" y2="50"  class="grid"/>
+
+  <text x="44" y="213" text-anchor="end" class="label">0</text>
+  <text x="44" y="173" text-anchor="end" class="label">10</text>
+  <text x="44" y="133" text-anchor="end" class="label">20</text>
+  <text x="44" y="93"  text-anchor="end" class="label">30</text>
+  <text x="44" y="53"  text-anchor="end" class="label">40%</text>
+
+  <!-- Group 1: Round 2 (n=15) — x center 150, bars 90..210 -->
+  <!-- B=4/15=26.67%, D=5/15=33.33%, A=5/15=33.33% -->
+  <!-- bar height: 4% = 16px, 1% = 4px ; y = 210 - rate*4 -->
+  <!-- B: 26.67% -> h=106.7, y=103.3 -->
+  <rect x="95"  y="103" width="30" height="107" fill="#4a6fa5"/>
+  <text x="110" y="120" text-anchor="middle" class="barlabel">26.7</text>
+  <!-- D: 33.33% -> h=133.3, y=76.7 -->
+  <rect x="135" y="77"  width="30" height="133" fill="#5b9bd5"/>
+  <text x="150" y="94" text-anchor="middle" class="barlabel">33.3</text>
+  <!-- A: 33.33% -->
+  <rect x="175" y="77"  width="30" height="133" fill="#70ad47"/>
+  <text x="190" y="94" text-anchor="middle" class="barlabel">33.3</text>
+
+  <text x="150" y="227" text-anchor="middle" class="label">Round 2 — HLE-15 hardest</text>
+  <text x="150" y="240" text-anchor="middle" class="label">B=4 D=5 A=5</text>
+
+  <!-- Group 2: Round 3 (n=30) — x center 350 -->
+  <!-- B=8/30=26.67%, D=7/30=23.33%, A=6/30=20.0% -->
+  <!-- B: 26.67% -->
+  <rect x="295" y="103" width="30" height="107" fill="#4a6fa5"/>
+  <text x="310" y="120" text-anchor="middle" class="barlabel">26.7</text>
+  <!-- D: 23.33% -> h=93.3, y=116.7 -->
+  <rect x="335" y="117" width="30" height="93"  fill="#5b9bd5"/>
+  <text x="350" y="134" text-anchor="middle" class="barlabel">23.3</text>
+  <!-- A: 20.0% -> h=80, y=130 -->
+  <rect x="375" y="130" width="30" height="80"  fill="#70ad47"/>
+  <text x="390" y="147" text-anchor="middle" class="barlabel">20.0</text>
+
+  <text x="350" y="227" text-anchor="middle" class="label">Round 3 — HLE-30 moderate</text>
+  <text x="350" y="240" text-anchor="middle" class="label">B=8 D=7 A=6</text>
+
+  <!-- Legend (top right) -->
+  <rect x="370" y="42" width="10" height="8" fill="#4a6fa5"/>
+  <text x="383" y="49" class="legend">B baseline</text>
+  <rect x="370" y="54" width="10" height="8" fill="#5b9bd5"/>
+  <text x="383" y="61" class="legend">D dynamic</text>
+  <rect x="370" y="66" width="10" height="8" fill="#70ad47"/>
+  <text x="383" y="73" class="legend">A adaptive</text>
+</svg>
